@@ -37,7 +37,7 @@ public class DepartYearIndexSetVO {
     /**
      * 年份
      */
-    private Integer year;
+    private String year;
 
     /**
      * 指标类型
@@ -181,11 +181,11 @@ public class DepartYearIndexSetVO {
         this.indexName = indexName;
     }
 
-    public Integer getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(Integer year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

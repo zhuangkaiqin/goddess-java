@@ -8,6 +8,7 @@ import com.bjike.goddess.foreigntax.bo.AccountInfoManagementBO;
 import com.bjike.goddess.foreigntax.dto.AccountInfoManagementDTO;
 import com.bjike.goddess.foreigntax.entity.AccountInfoManagement;
 import com.bjike.goddess.foreigntax.enums.GuideAddrStatus;
+import com.bjike.goddess.foreigntax.excel.SonPermissionObject;
 import com.bjike.goddess.foreigntax.to.AccountInfoManagementTO;
 import com.bjike.goddess.foreigntax.to.GuidePermissionTO;
 import com.bjike.goddess.user.api.UserAPI;
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -181,8 +183,8 @@ public class AccountInfoManagementSerImpl extends ServiceImpl<AccountInfoManagem
 
 
     @Override
-    public Long count(AccountInfoManagementDTO dto) throws SerException {
-        Long count = super.count(dto);
+    public Long countAccountInfoManagement(AccountInfoManagementDTO accountInfoManagementDTO) throws SerException {
+        Long count = super.count(accountInfoManagementDTO);
         return count;
     }
 
@@ -193,18 +195,18 @@ public class AccountInfoManagementSerImpl extends ServiceImpl<AccountInfoManagem
     }
 
     @Override
-    public List<AccountInfoManagementBO> list(AccountInfoManagementDTO dto) throws SerException {
+    public List<AccountInfoManagementBO> findListAccountInfoManagement(AccountInfoManagementDTO accountInfoManagementDTO) throws SerException {
         checkSeeIdentity();
-        List<AccountInfoManagement> accountInfoManagements = super.findByCis(dto, true);
+        List<AccountInfoManagement> accountInfoManagements = super.findByCis(accountInfoManagementDTO, true);
         List<AccountInfoManagementBO> accountInfoManagementBOS = BeanTransform.copyProperties(accountInfoManagements, AccountInfoManagementBO.class);
         return accountInfoManagementBOS;
     }
 
     @Transactional(rollbackFor = SerException.class)
     @Override
-    public AccountInfoManagementBO insert(AccountInfoManagementTO to) throws SerException {
+    public AccountInfoManagementBO insertAccountInfoManagement(AccountInfoManagementTO accountInfoManagementTO) throws SerException {
         checkAddIdentity();
-        AccountInfoManagement accountInfoManagement = BeanTransform.copyProperties(to, AccountInfoManagement.class, true);
+        AccountInfoManagement accountInfoManagement = BeanTransform.copyProperties(accountInfoManagementTO, AccountInfoManagement.class, true);
         accountInfoManagement.setCreateTime(LocalDateTime.now());
         super.save(accountInfoManagement);
         return BeanTransform.copyProperties(accountInfoManagement, AccountInfoManagementBO.class);
@@ -212,20 +214,18 @@ public class AccountInfoManagementSerImpl extends ServiceImpl<AccountInfoManagem
 
     @Transactional(rollbackFor = SerException.class)
     @Override
-    public AccountInfoManagementBO edit(AccountInfoManagementTO to) throws SerException {
+    public AccountInfoManagementBO editAccountInfoManagement(AccountInfoManagementTO accountInfoManagementTO) throws SerException {
         checkAddIdentity();
-        AccountInfoManagement accountInfoManagement = super.findById(to.getId());
-        LocalDateTime createTime = accountInfoManagement.getCreateTime();
-        accountInfoManagement = BeanTransform.copyProperties(to, AccountInfoManagement.class, true);
-        accountInfoManagement.setCreateTime(createTime);
+        AccountInfoManagement accountInfoManagement = super.findById(accountInfoManagementTO.getId());
+        BeanTransform.copyProperties(accountInfoManagementTO, accountInfoManagement, true);
         accountInfoManagement.setModifyTime(LocalDateTime.now());
         super.update(accountInfoManagement);
-        return BeanTransform.copyProperties(to, AccountInfoManagementBO.class);
+        return BeanTransform.copyProperties(accountInfoManagementTO, AccountInfoManagementBO.class);
     }
 
     @Transactional(rollbackFor = SerException.class)
     @Override
-    public void remove(String id) throws SerException {
+    public void removeAccountInfoManagement(String id) throws SerException {
         checkAddIdentity();
         if (StringUtils.isBlank(id)) {
             throw new SerException("id不能为空");

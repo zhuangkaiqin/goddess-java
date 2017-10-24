@@ -38,8 +38,8 @@ public class YearIndexSetTO extends BaseTO {
     /**
      * 年份
      */
-    @NotNull(groups = {YearIndexSetTO.TestAdd.class}, message = "年份名称不能为空")
-    private Integer year;
+    @NotBlank(groups = {YearIndexSetTO.TestAdd.class}, message = "年份名称不能为空")
+    private String year;
 
     /**
      * 指标类型
@@ -124,11 +124,11 @@ public class YearIndexSetTO extends BaseTO {
         this.indexName = indexName;
     }
 
-    public Integer getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(Integer year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

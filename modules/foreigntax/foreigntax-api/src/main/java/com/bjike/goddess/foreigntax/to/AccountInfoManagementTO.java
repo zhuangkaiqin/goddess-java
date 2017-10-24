@@ -23,26 +23,29 @@ public class AccountInfoManagementTO extends BaseTO {
     private String company;
 
     /**
-     * 时间
+     * 所属月份
      */
-    @NotBlank(message = "时间不能为空",groups = {ADD.class, EDIT.class})
-    private String time;
+    @NotBlank(message = "所属月份不能为空",groups = {ADD.class, EDIT.class})
+    private String month;
+
     /**
      * 资料名称
      */
-    @NotBlank(message = "资料名称不能为空",groups = {ADD.class, EDIT.class})
     private String dataName;
-    /**
-     * 办税员
-     */
-    @NotBlank(message = "办税员不能为空",groups = {ADD.class, EDIT.class})
-    private String taxAgent;
 
     /**
      * 跟进人
      */
-    @NotBlank(message = "跟进人不能为空",groups = {ADD.class, EDIT.class})
     private String followUpPeople;
+    /**
+     * 创建时间
+     */
+    private String createTime;
+
+    /**
+     * 修改时间
+     */
+    private String modifyTime;
 
 
     public String getCompany() {
@@ -53,12 +56,12 @@ public class AccountInfoManagementTO extends BaseTO {
         this.company = company;
     }
 
-    public String getTime() {
-        return time;
+    public String getMonth() {
+        return month;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setMonth(String month) {
+        this.month = month;
     }
 
     public String getDataName() {
@@ -69,19 +72,27 @@ public class AccountInfoManagementTO extends BaseTO {
         this.dataName = dataName;
     }
 
-    public String getTaxAgent() {
-        return taxAgent;
-    }
-
-    public void setTaxAgent(String taxAgent) {
-        this.taxAgent = taxAgent;
-    }
-
     public String getFollowUpPeople() {
         return followUpPeople;
     }
 
     public void setFollowUpPeople(String followUpPeople) {
         this.followUpPeople = followUpPeople;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(String modifyTime) {
+        this.modifyTime = modifyTime;
     }
 }

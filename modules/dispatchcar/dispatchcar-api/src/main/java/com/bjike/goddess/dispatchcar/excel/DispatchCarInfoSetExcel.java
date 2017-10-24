@@ -2,7 +2,10 @@ package com.bjike.goddess.dispatchcar.excel;
 
 import com.bjike.goddess.common.api.type.Status;
 import com.bjike.goddess.common.utils.excel.ExcelHeader;
-import com.bjike.goddess.dispatchcar.enums.*;
+import com.bjike.goddess.dispatchcar.enums.Acctype;
+import com.bjike.goddess.dispatchcar.enums.CarSource;
+import com.bjike.goddess.dispatchcar.enums.Evaluate;
+import com.bjike.goddess.dispatchcar.enums.FindType;
 
 /**
  * @Author: [jiangzaixuan]
@@ -153,39 +156,39 @@ public class DispatchCarInfoSetExcel {
     /**
      * 补加油说明
      */
-    @ExcelHeader(name="补加油说明")
+    @ExcelHeader(name="补加油说明",notNull = true)
     private String addOilExplain;
 
     /**
      * 补加油量
      */
-    @ExcelHeader(name="补加油量")
+    @ExcelHeader(name="补加油量",notNull = true)
     private Double supplementOil;
 
     /**
      * 补加油费
      */
-    @ExcelHeader(name="补加油费")
+    @ExcelHeader(name="补加油费",notNull = true)
     private Double supplementFee;
 
 
     /**
      * 欠油说明
      */
-    @ExcelHeader(name="欠油说明")
+    @ExcelHeader(name="欠油说明",notNull = true)
     private String oweOilExplain;
 
 
     /**
      * 欠油量
      */
-    @ExcelHeader(name="欠油量")
+    @ExcelHeader(name="欠油量",notNull = true)
     private Double lessOil;
 
     /**
      * 欠油费
      */
-    @ExcelHeader(name="欠油费")
+    @ExcelHeader(name="欠油费",notNull = true)
     private Double lessOilFee;
 
 
@@ -528,7 +531,7 @@ public class DispatchCarInfoSetExcel {
      * 数据状态
      */
     @ExcelHeader(name="数据状态",notNull = true)
-    private DataStatus dataStatus;
+    private Status staus;
 
     /**
      * 查询类型
@@ -1201,12 +1204,12 @@ public class DispatchCarInfoSetExcel {
         this.carRentalCost = carRentalCost;
     }
 
-    public DataStatus getDataStatus() {
-        return dataStatus;
+    public Status getStaus() {
+        return staus;
     }
 
-    public void setDataStatus(DataStatus dataStatus) {
-        this.dataStatus = dataStatus;
+    public void setStaus(Status staus) {
+        this.staus = staus;
     }
 
     public FindType getFindType() {

@@ -221,4 +221,17 @@ public interface BaseInfoManageSer extends Ser<BaseInfoManage, BaseInfoManageDTO
     default List<String> getArea(String projectNane) throws SerException {
         return null;
     }
+
+    /**
+     * 获取某段时间内相同地区和项目组的内部项目数
+     *
+     * @param startTime
+     * @param endTime
+     * @param project
+     * @return
+     * @throws SerException
+     */
+    default Long getInterProject(String startTime, String endTime,  String project) throws SerException {
+        return null;
+    }
 }

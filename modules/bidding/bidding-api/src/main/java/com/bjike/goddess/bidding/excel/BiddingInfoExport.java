@@ -124,6 +124,11 @@ public class BiddingInfoExport {
     @ExcelHeader(name = "注册信息", notNull = true)
     private String registrationInfo;
 
+    /**
+     * 状态
+     */
+    @ExcelHeader(name = "状态", notNull = true)
+    private String status;
 
     /**
      * 购买标书时间
@@ -312,6 +317,13 @@ public class BiddingInfoExport {
         this.registrationInfo = registrationInfo;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getBuyTenderTime() {
         return buyTenderTime;

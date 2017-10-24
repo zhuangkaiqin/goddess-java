@@ -6,14 +6,11 @@ import com.bjike.goddess.common.api.exception.SerException;
 import com.bjike.goddess.common.jpa.service.ServiceImpl;
 import com.bjike.goddess.common.provider.utils.RpcTransmit;
 import com.bjike.goddess.common.utils.bean.BeanTransform;
-import com.bjike.goddess.contacts.api.InternalContactsAPI;
 import com.bjike.goddess.message.api.MessageAPI;
 import com.bjike.goddess.message.enums.SendType;
 import com.bjike.goddess.message.to.MessageTO;
-import com.bjike.goddess.oilcardmanage.bo.CusPermissionOperateBO;
 import com.bjike.goddess.oilcardmanage.bo.OilCardBasicBO;
 import com.bjike.goddess.oilcardmanage.bo.OilCardReceiveBO;
-import com.bjike.goddess.oilcardmanage.bo.OilCardRechargeBO;
 import com.bjike.goddess.oilcardmanage.dto.CusPermissionDTO;
 import com.bjike.goddess.oilcardmanage.dto.CusPermissionOperateDTO;
 import com.bjike.goddess.oilcardmanage.dto.OilCardBasicDTO;
@@ -32,20 +29,18 @@ import com.bjike.goddess.organize.api.PositionDetailAPI;
 import com.bjike.goddess.organize.api.PositionDetailUserAPI;
 import com.bjike.goddess.organize.bo.AreaBO;
 import com.bjike.goddess.organize.dto.PositionDetailDTO;
-import com.bjike.goddess.organize.entity.PositionDetail;
 import com.bjike.goddess.user.api.UserAPI;
 import com.bjike.goddess.user.bo.UserBO;
-import org.apache.poi.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
 
-import javax.enterprise.inject.spi.Bean;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+//import com.bjike.goddess.contacts.api.InternalContactsAPI;
 
 /**
  * 油卡领用业务处理类
@@ -66,8 +61,8 @@ public class OilCardReceiveSerImpl extends ServiceImpl<OilCardReceive, OilCardRe
     private UserAPI userAPI;
     @Autowired
     private MessageAPI messageAPI;
-    @Autowired
-    private InternalContactsAPI internalContactsAPI;
+//    @Autowired
+//    private InternalContactsAPI internalContactsAPI;
 
     @Autowired
     private CusPermissionSer cusPermissionSer;
@@ -248,7 +243,9 @@ public class OilCardReceiveSerImpl extends ServiceImpl<OilCardReceive, OilCardRe
                 String content = username + "申请油卡领用，请在3天内审批，请在三天内审批，否则油卡领用无效";
                 MessageTO messageTO = new MessageTO(username + "申请油卡领用，请批准", "");
                 messageTO.setSendType(SendType.EMAIL);
-                String[] users = new String[]{internalContactsAPI.findByUser(userid).getEmail()};
+                String[] users = new String[]{
+                    //internalContactsAPI.findByUser(userid).getEmail()
+                        };
                 messageTO.setContent(content);
                 messageTO.setReceivers(users);
                 messageAPI.send(messageTO);

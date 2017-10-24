@@ -55,11 +55,11 @@ public class DispatchCarInfoTO extends BaseTO {
     @NotBlank(message = "所属项目组不能为空", groups = {ADD.class, EDIT.class})
     private String group;
 
-//    /**
-//     * 是否立项
-//     */
-//    @NotNull(message = "是否立项不能为空", groups = {ADD.class, EDIT.class})
-//    private Boolean projectApproval;
+    /**
+     * 是否立项
+     */
+    @NotNull(message = "是否立项不能为空", groups = {ADD.class, EDIT.class})
+    private Boolean projectApproval;
 
     /**
      * 项目名称
@@ -101,7 +101,7 @@ public class DispatchCarInfoTO extends BaseTO {
      * 加班时长
      */
     @NotNull(message = "加班时长不能为空", groups = {ADD.class, EDIT.class})
-    private Double overWorkTime;
+    private Integer overWorkTime;
 
     /**
      * 用车事由
@@ -230,14 +230,8 @@ public class DispatchCarInfoTO extends BaseTO {
     /**
      * 评价司机
      */
-    @NotNull(message = "评价司机不能为空", groups = {ADD.class, EDIT.class})
+    @NotBlank(message = "评价司机不能为空", groups = {ADD.class, EDIT.class})
     private Evaluate evaluatedriver;
-
-    /**
-     * 实际加油量
-     */
-    @NotNull(message = "实际加油量不能为空", groups = {ADD.class, EDIT.class})
-    private Double addOilAmount;
 
     /**
      * 项目模块负责人
@@ -281,7 +275,7 @@ public class DispatchCarInfoTO extends BaseTO {
     /**
      * 寄件日期
      */
-    private String sendDate;
+    private LocalDate sendDate;
 
 
     /**
@@ -331,7 +325,7 @@ public class DispatchCarInfoTO extends BaseTO {
     /**
      * 预计付款日期
      */
-    private String expectPayDate;
+    private LocalDate expectPayDate;
 
     /**
      * 付款计划
@@ -342,12 +336,6 @@ public class DispatchCarInfoTO extends BaseTO {
      * 是否付款
      */
     private Boolean ifPayed;
-
-    /**
-     * 租车费用
-     */
-    @NotNull(message = "租车费用不能为空",groups = {ADD.class, EDIT.class})
-    private Double carRentalCost;
 
 //    /**
 //     * 处罚汇总
@@ -411,13 +399,13 @@ public class DispatchCarInfoTO extends BaseTO {
         this.group = group;
     }
 
-//    public Boolean getProjectApproval() {
-//        return projectApproval;
-//    }
-//
-//    public void setProjectApproval(Boolean projectApproval) {
-//        this.projectApproval = projectApproval;
-//    }
+    public Boolean getProjectApproval() {
+        return projectApproval;
+    }
+
+    public void setProjectApproval(Boolean projectApproval) {
+        this.projectApproval = projectApproval;
+    }
 
     public String getProject() {
         return project;
@@ -467,11 +455,11 @@ public class DispatchCarInfoTO extends BaseTO {
         this.siesta = siesta;
     }
 
-    public Double getOverWorkTime() {
+    public Integer getOverWorkTime() {
         return overWorkTime;
     }
 
-    public void setOverWorkTime(Double overWorkTime) {
+    public void setOverWorkTime(Integer overWorkTime) {
         this.overWorkTime = overWorkTime;
     }
 
@@ -700,6 +688,14 @@ public class DispatchCarInfoTO extends BaseTO {
         this.sender = sender;
     }
 
+    public LocalDate getSendDate() {
+        return sendDate;
+    }
+
+    public void setSendDate(LocalDate sendDate) {
+        this.sendDate = sendDate;
+    }
+
     public Boolean getIfSendArchiveAL() {
         return ifSendArchiveAL;
     }
@@ -765,15 +761,11 @@ public class DispatchCarInfoTO extends BaseTO {
         this.moneyModuleIdea = moneyModuleIdea;
     }
 
-    public String getSendDate() {
-        return sendDate;
-    }
-
-    public String getExpectPayDate() {
+    public LocalDate getExpectPayDate() {
         return expectPayDate;
     }
 
-    public void setExpectPayDate(String expectPayDate) {
+    public void setExpectPayDate(LocalDate expectPayDate) {
         this.expectPayDate = expectPayDate;
     }
 
@@ -799,25 +791,5 @@ public class DispatchCarInfoTO extends BaseTO {
 
     public void setExceptionAnalyze(String exceptionAnalyze) {
         this.exceptionAnalyze = exceptionAnalyze;
-    }
-
-    public Double getCarRentalCost() {
-        return carRentalCost;
-    }
-
-    public void setCarRentalCost(Double carRentalCost) {
-        this.carRentalCost = carRentalCost;
-    }
-
-    public Double getAddOilAmount() {
-        return addOilAmount;
-    }
-
-    public void setAddOilAmount(Double addOilAmount) {
-        this.addOilAmount = addOilAmount;
-    }
-
-    public void setSendDate(String sendDate) {
-        this.sendDate = sendDate;
     }
 }

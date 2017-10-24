@@ -1,7 +1,6 @@
 package com.bjike.goddess.dispatchcar.to;
 
 import com.bjike.goddess.common.api.to.BaseTO;
-import com.bjike.goddess.dispatchcar.enums.GuideAddStatus;
 import com.bjike.goddess.dispatchcar.enums.GuideAddrStatus;
 
 import javax.validation.constraints.NotNull;
@@ -24,14 +23,14 @@ public class GuidePermissionTO extends BaseTO {
      * 导航栏类型
      */
     @NotNull(groups = {GuidePermissionTO.TestAdd.class}, message = "导航栏类型不能为空")
-    private GuideAddStatus guideAddStatus;
+    private GuideAddrStatus guideAddrStatus;
 
-    public GuideAddStatus getGuideAddStatus() {
-        return guideAddStatus;
+
+    public GuideAddrStatus getGuideAddrStatus() {
+        return guideAddrStatus;
     }
 
-    public void setGuideAddStatus(GuideAddStatus guideAddStatus) {
-        this.guideAddStatus = guideAddStatus;
+    public void setGuideAddrStatus(GuideAddrStatus guideAddrStatus) {
+        this.guideAddrStatus = guideAddrStatus;
     }
 }
-

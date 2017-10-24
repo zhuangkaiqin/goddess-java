@@ -28,7 +28,7 @@ public class DepartYearIndexSetExcel extends BaseTO {
      * 年份
      */
     @ExcelHeader(name = "年份",notNull = true)
-    private Integer year;
+    private String year;
 
     /**
      * 指标类型
@@ -159,11 +159,11 @@ public class DepartYearIndexSetExcel extends BaseTO {
         this.indexName = indexName;
     }
 
-    public Integer getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(Integer year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

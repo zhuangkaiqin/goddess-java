@@ -1,7 +1,6 @@
 package com.bjike.goddess.dispatchcar.api;
 
 import com.bjike.goddess.carinfo.bo.DriverInfoBO;
-import com.bjike.goddess.carinfo.to.*;
 import com.bjike.goddess.common.api.exception.SerException;
 import com.bjike.goddess.dispatchcar.bo.*;
 import com.bjike.goddess.dispatchcar.dto.CollectDispatchcarDTO;
@@ -11,11 +10,8 @@ import com.bjike.goddess.dispatchcar.enums.CollectIntervalType;
 import com.bjike.goddess.dispatchcar.enums.CollectType;
 import com.bjike.goddess.dispatchcar.excel.SonPermissionObject;
 import com.bjike.goddess.dispatchcar.to.*;
-import com.bjike.goddess.dispatchcar.to.GuidePermissionTO;
-import com.bjike.goddess.staffentry.bo.EntryRegisterBO;
 import com.bjike.goddess.staffentry.bo.StaffEntryRegisterBO;
 
-import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -28,20 +24,6 @@ import java.util.List;
  * @Copy: [ com.bjike ]
  */
 public interface DispatchCarInfoAPI {
-
-    /**
-     * 下拉导航权限
-     */
-    default List<SonPermissionObject> sonPermission() throws SerException {
-        return null;
-    }
-
-    /**
-     * 导航权限
-     */
-    default Boolean guidePermission(GuidePermissionTO guidePermissionTO) throws SerException {
-        return null;
-    }
 
 
 
@@ -285,7 +267,7 @@ public interface DispatchCarInfoAPI {
      * 查询所有用车陪同人员,任务下达人,用车人
      * @throws SerException
      */
-    List<EntryRegisterBO> findAllEntry() throws SerException;
+    List<StaffEntryRegisterBO> findAllEntry() throws SerException;
 
 
     /**
@@ -383,31 +365,6 @@ public interface DispatchCarInfoAPI {
      * 出车汇总
      */
     List<CollectDispatchcarBO> countCar(CollectDispatchcarDTO dispatchcarDTO) throws SerException;
-
-
-    /**
-     * 出车记录删除
-     */
-    void delete(String id) throws SerException;
-
-
-    /**
-     * 根据油卡编号，地区，部门，汇总时间查询出车记录
-     */
-    List<DispatchCarInfoBO> findInformation(String area,String department,String day) throws SerException;
-
-    /**
-     * 根据油卡编号，地区，部门，汇总时间区间查询出车记录
-     */
-    List<DispatchCarInfoBO> findInformation(String area, String department, LocalDate[] day) throws SerException;
-
-    /**
-     * 部门，汇总时间区间查询出车记录
-     * @param department
-     * @param day
-     * @throws SerException
-     */
-    List<DispatchCarInfoBO> findInformation( String department, LocalDate[] day) throws SerException;
 
 
 }

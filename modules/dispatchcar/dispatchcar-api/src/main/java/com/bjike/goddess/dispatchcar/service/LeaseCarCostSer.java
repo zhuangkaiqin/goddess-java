@@ -5,7 +5,6 @@ import com.bjike.goddess.common.api.service.Ser;
 import com.bjike.goddess.dispatchcar.bo.LeaseCarCostBO;
 import com.bjike.goddess.dispatchcar.dto.LeaseCarCostDTO;
 import com.bjike.goddess.dispatchcar.entity.LeaseCarCost;
-import com.bjike.goddess.dispatchcar.to.GuidePermissionTO;
 import com.bjike.goddess.dispatchcar.to.LeaseCarCostTO;
 import com.bjike.goddess.organize.bo.AreaBO;
 import com.bjike.goddess.organize.bo.OpinionBO;
@@ -22,19 +21,6 @@ import java.util.List;
  * @Copy: [ com.bjike ]
  */
 public interface LeaseCarCostSer extends Ser<LeaseCarCost, LeaseCarCostDTO> {
-
-    /**
-     * 下拉导航权限
-     */
-    default Boolean sonPermission() throws SerException {
-        return null;
-    }
-    /**
-     * 导航权限
-     */
-    default Boolean guidePermission(GuidePermissionTO guidePermissionTO) throws SerException {
-        return null;
-    }
 
     /**
      * 新增租车费用基本信息

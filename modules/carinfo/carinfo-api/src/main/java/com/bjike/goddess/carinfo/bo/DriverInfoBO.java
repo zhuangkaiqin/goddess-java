@@ -13,26 +13,20 @@ import com.bjike.goddess.common.api.bo.BaseBO;
  */
 public class DriverInfoBO extends BaseBO {
 
-//    /**
-//     * 账务模块审核意见
-//     */
-//    private String suggest;
-//
-//    /**
-//     * 审核结果
-//     */
-//    private Boolean audit;
+    /**
+     * 账务模块审核意见
+     */
+    private String suggest;
+
+    /**
+     * 审核结果
+     */
+    private Boolean audit;
 
     /**
      * 地区
      */
     private String area;
-
-    /**
-     * 项目组
-     */
-    private String department;
-
 
     /**
      * 结算方式
@@ -169,6 +163,22 @@ public class DriverInfoBO extends BaseBO {
      */
     private String remark;
 
+
+    public String getSuggest() {
+        return suggest;
+    }
+
+    public void setSuggest(String suggest) {
+        this.suggest = suggest;
+    }
+
+    public Boolean getAudit() {
+        return audit;
+    }
+
+    public void setAudit(Boolean audit) {
+        this.audit = audit;
+    }
 
     public String getArea() {
         return area;
@@ -393,14 +403,4 @@ public class DriverInfoBO extends BaseBO {
     public void setRemark(String remark) {
         this.remark = remark;
     }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-
 }

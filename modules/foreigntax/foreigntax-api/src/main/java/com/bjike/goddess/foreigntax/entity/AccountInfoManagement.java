@@ -2,9 +2,7 @@ package com.bjike.goddess.foreigntax.entity;
 
 import com.bjike.goddess.common.api.entity.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 
@@ -24,29 +22,27 @@ public class AccountInfoManagement extends BaseEntity {
     /**
      * 公司
      */
-    @Column(name = "company",  columnDefinition = "VARCHAR(255)   COMMENT '公司'")
+    @Column(name = "company", nullable = false,columnDefinition = "VARCHAR(255)   COMMENT '公司'")
     private String company;
+
     /**
-     * 时间
+     * 所属月份
      */
-    @Column(name = "time", columnDefinition = "DATE   COMMENT '时间'")
-    private LocalDate time;
+    @Column(name = "month", columnDefinition = "VARCHAR(255)   COMMENT '所属月份'")
+    private String month;
+
     /**
      * 资料名称
      */
     @Column(name = "dataName", columnDefinition = "VARCHAR(255)   COMMENT '资料名称'")
     private String dataName;
-    /**
-     * 办税员
-     */
-    @Column(name = "taxAgent", columnDefinition = "VARCHAR(255)   COMMENT '办税员'")
-    private String taxAgent;
 
     /**
      * 跟进人
      */
     @Column(name = "followUpPeople", columnDefinition = "VARCHAR(255)   COMMENT '跟进人'")
     private String followUpPeople;
+
 
     public String getCompany() {
         return company;
@@ -56,12 +52,12 @@ public class AccountInfoManagement extends BaseEntity {
         this.company = company;
     }
 
-    public LocalDate getTime() {
-        return time;
+    public String getMonth() {
+        return month;
     }
 
-    public void setTime(LocalDate time) {
-        this.time = time;
+    public void setMonth(String month) {
+        this.month = month;
     }
 
     public String getDataName() {
@@ -70,14 +66,6 @@ public class AccountInfoManagement extends BaseEntity {
 
     public void setDataName(String dataName) {
         this.dataName = dataName;
-    }
-
-    public String getTaxAgent() {
-        return taxAgent;
-    }
-
-    public void setTaxAgent(String taxAgent) {
-        this.taxAgent = taxAgent;
     }
 
     public String getFollowUpPeople() {

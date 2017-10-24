@@ -36,8 +36,8 @@ public class YearIndexSet extends BaseEntity {
     /**
      * 年份
      */
-    @Column(name = "year", nullable = false, columnDefinition = "INT  COMMENT '年份'")
-    private Integer year;
+    @Column(name = "year", nullable = false, columnDefinition = "VARCHAR(255)   COMMENT '年份'")
+    private String year;
 
     /**
      * 指标类型
@@ -109,11 +109,11 @@ public class YearIndexSet extends BaseEntity {
         this.indexName = indexName;
     }
 
-    public Integer getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(Integer year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

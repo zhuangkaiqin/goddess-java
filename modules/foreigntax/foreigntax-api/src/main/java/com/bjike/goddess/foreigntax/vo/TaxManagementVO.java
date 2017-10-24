@@ -23,20 +23,12 @@ public class TaxManagementVO {
     private String company;
 
     /**
-     * 国地税标志
+     * 所属月份
      */
-    private String landTaxMark;
-    /**
-     * 税款所属期起
-     */
-    private String taxStart;
-    /**
-     * 税款所属期止
-     */
-    private String taxEnd;
+    private String month;
 
     /**
-     * 税种品名
+     * 税种
      */
     private String taxType;
 
@@ -51,18 +43,29 @@ public class TaxManagementVO {
     private Double tax;
 
     /**
-     * 申报期限
-     */
-    private String deadlineFor;
-    /**
-     * 申报日期
-     */
-    private String deadlineDate;
-
-    /**
      * 缴税状态
      */
     private PaymentStatus paymentStatus;
+
+    /**
+     * 付款日期
+     */
+    private String paymentDate;
+
+    /**
+     * 付款单位
+     */
+    private String paymentUnit;
+    /**
+     * 创建时间
+     */
+    private String createTime;
+
+    /**
+     * 修改时间
+     */
+    private String modifyTime;
+
 
     public String getId() {
         return id;
@@ -80,28 +83,12 @@ public class TaxManagementVO {
         this.company = company;
     }
 
-    public String getLandTaxMark() {
-        return landTaxMark;
+    public String getMonth() {
+        return month;
     }
 
-    public void setLandTaxMark(String landTaxMark) {
-        this.landTaxMark = landTaxMark;
-    }
-
-    public String getTaxStart() {
-        return taxStart;
-    }
-
-    public void setTaxStart(String taxStart) {
-        this.taxStart = taxStart;
-    }
-
-    public String getTaxEnd() {
-        return taxEnd;
-    }
-
-    public void setTaxEnd(String taxEnd) {
-        this.taxEnd = taxEnd;
+    public void setMonth(String month) {
+        this.month = month;
     }
 
     public String getTaxType() {
@@ -128,27 +115,43 @@ public class TaxManagementVO {
         this.tax = tax;
     }
 
-    public String getDeadlineFor() {
-        return deadlineFor;
-    }
-
-    public void setDeadlineFor(String deadlineFor) {
-        this.deadlineFor = deadlineFor;
-    }
-
-    public String getDeadlineDate() {
-        return deadlineDate;
-    }
-
-    public void setDeadlineDate(String deadlineDate) {
-        this.deadlineDate = deadlineDate;
-    }
-
     public PaymentStatus getPaymentStatus() {
         return paymentStatus;
     }
 
     public void setPaymentStatus(PaymentStatus paymentStatus) {
         this.paymentStatus = paymentStatus;
+    }
+
+    public String getPaymentDate() {
+        return paymentDate;
+    }
+
+    public void setPaymentDate(String paymentDate) {
+        this.paymentDate = paymentDate;
+    }
+
+    public String getPaymentUnit() {
+        return paymentUnit;
+    }
+
+    public void setPaymentUnit(String paymentUnit) {
+        this.paymentUnit = paymentUnit;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(String modifyTime) {
+        this.modifyTime = modifyTime;
     }
 }

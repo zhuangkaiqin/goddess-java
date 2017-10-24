@@ -53,13 +53,13 @@ public class PositionIndexSetTO extends BaseTO {
      * 年份
      */
     @NotBlank(groups = {PositionIndexSetTO.TestAdd.class}, message = "年份不能为空")
-    private Integer year;
+    private String year;
 
     /**
      * 月份
      */
     @NotBlank(groups = {PositionIndexSetTO.TestAdd.class}, message = "月份不能为空")
-    private Integer month;
+    private String month;
 
     /**
      * 指标类型
@@ -223,19 +223,19 @@ public class PositionIndexSetTO extends BaseTO {
         this.indexName = indexName;
     }
 
-    public Integer getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(Integer year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
-    public Integer getMonth() {
+    public String getMonth() {
         return month;
     }
 
-    public void setMonth(Integer month) {
+    public void setMonth(String month) {
         this.month = month;
     }
 

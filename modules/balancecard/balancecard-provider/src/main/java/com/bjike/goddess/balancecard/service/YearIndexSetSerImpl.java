@@ -649,7 +649,7 @@ public class YearIndexSetSerImpl extends ServiceImpl<YearIndexSet, YearIndexSetD
         if (StringUtils.isBlank(to.getIndexName())) {
             throw new SerException("第" + row + "行的指标名称不能为空");
         }
-        if (to.getYear() != null) {
+        if (StringUtils.isBlank(to.getYear())) {
             throw new SerException("第" + row + "行的年份不能为空");
         }
         if (null == to.getDescribtion()) {
@@ -666,7 +666,7 @@ public class YearIndexSetSerImpl extends ServiceImpl<YearIndexSet, YearIndexSetD
         if (StringUtils.isNotBlank(to.getIndexName())) {
             dto.getConditions().add(Restrict.eq("indexName", to.getIndexName()));
         }
-        if (to.getYear() != null) {
+        if (StringUtils.isNotBlank(to.getYear())) {
             dto.getConditions().add(Restrict.gt("year", to.getYear()));
         }
 
@@ -720,9 +720,9 @@ public class YearIndexSetSerImpl extends ServiceImpl<YearIndexSet, YearIndexSetD
         if (StringUtils.isNotBlank(to.getStartTime()) && StringUtils.isNotBlank(to.getEndTime())) {
             LocalDate start = LocalDate.parse(to.getStartTime());
             LocalDate end = LocalDate.parse(to.getEndTime());
-            Integer startYear = start.getYear();
-            Integer endYear = end.getYear();
-            Integer[] years = new Integer[]{startYear, endYear};
+            String startYear = String.valueOf(start.getYear());
+            String endYear = String.valueOf(end.getYear());
+            String[] years = new String[]{startYear, endYear};
             dto.getConditions().add(Restrict.between("year", years));
         }
 
@@ -761,7 +761,7 @@ public class YearIndexSetSerImpl extends ServiceImpl<YearIndexSet, YearIndexSetD
 
         YearIndexSetExcel excel = new YearIndexSetExcel();
         excel.setIndexName("指标名称");
-        excel.setYear(2017);
+        excel.setYear("年份");
         excel.setIndexType("指标类型");
         excel.setDimension("维度");
         excel.setDescribtion(12d);

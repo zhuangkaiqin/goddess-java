@@ -1,6 +1,7 @@
 package com.bjike.goddess.foreigntax.api;
 
 import com.bjike.goddess.common.api.exception.SerException;
+import com.bjike.goddess.foreigntax.bo.TaxCollectBO;
 import com.bjike.goddess.foreigntax.bo.TaxManagementBO;
 import com.bjike.goddess.foreigntax.dto.TaxManagementDTO;
 import com.bjike.goddess.foreigntax.excel.SonPermissionObject;
@@ -11,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * 税金管理业务接口实现
@@ -26,7 +26,6 @@ import java.util.Map;
 public class TaxManagementApiImpl implements TaxManagementAPI {
     @Autowired
     private TaxManagementSer taxManagementSer;
-
     @Override
     public List<SonPermissionObject> sonPermission() throws SerException {
         return taxManagementSer.sonPermission();
@@ -36,10 +35,9 @@ public class TaxManagementApiImpl implements TaxManagementAPI {
     public Boolean guidePermission(GuidePermissionTO guidePermissionTO) throws SerException {
         return taxManagementSer.guidePermission(guidePermissionTO);
     }
-
     @Override
-    public Long count(TaxManagementDTO dto) throws SerException {
-        return taxManagementSer.count(dto);
+    public Long countTaxManagement(TaxManagementDTO taxManagementDTO) throws SerException {
+        return taxManagementSer.countTaxManagement(taxManagementDTO);
     }
 
     @Override
@@ -48,39 +46,29 @@ public class TaxManagementApiImpl implements TaxManagementAPI {
     }
 
     @Override
-    public List<TaxManagementBO> list(TaxManagementDTO dto) throws SerException {
-        return taxManagementSer.list(dto);
+    public List<TaxManagementBO> findListTaxManagement(TaxManagementDTO taxManagementDTO) throws SerException {
+        return taxManagementSer.findListTaxManagement(taxManagementDTO);
     }
 
     @Override
-    public TaxManagementBO insert(TaxManagementTO to) throws SerException {
-        return taxManagementSer.insert(to);
+    public TaxManagementBO insertTaxManagement(TaxManagementTO taxManagementTO) throws SerException {
+        return taxManagementSer.insertTaxManagement(taxManagementTO);
     }
 
     @Override
-    public TaxManagementBO edit(TaxManagementTO to) throws SerException {
-        return taxManagementSer.edit(to);
+    public TaxManagementBO editTaxManagement(TaxManagementTO taxManagementTO) throws SerException {
+        return taxManagementSer.editTaxManagement(taxManagementTO);
     }
 
     @Override
-    public void remove(String id) throws SerException {
-        taxManagementSer.remove(id);
-    }
-    @Override
-    public Map<String,String> getDead(String taxEnd)throws SerException{
-        return taxManagementSer.getDead(taxEnd);
+    public void removeTaxManagement(String id) throws SerException {
+        taxManagementSer.removeTaxManagement(id);
     }
 
     @Override
-    public List<TaxManagementBO> collect(TaxManagementDTO dto) throws SerException {
-        return taxManagementSer.collect(dto);
+    public List<TaxCollectBO> collectTaxManagement(String[] company) throws SerException {
+        return taxManagementSer.collectTaxManagement(company);
     }
-
-    @Override
-    public List<String> getTaxType() throws SerException {
-        return taxManagementSer.getTaxType();
-    }
-
     @Override
     public List<String> getCompany() throws SerException {
         return taxManagementSer.getCompany();

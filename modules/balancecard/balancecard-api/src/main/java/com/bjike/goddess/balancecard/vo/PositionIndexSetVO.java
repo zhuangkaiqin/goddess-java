@@ -46,12 +46,12 @@ public class PositionIndexSetVO {
     /**
      * 年份
      */
-    private Integer year;
+    private String year;
 
     /**
      * 月份
      */
-    private Integer month;
+    private String month;
 
     /**
      * 指标类型
@@ -212,19 +212,19 @@ public class PositionIndexSetVO {
         this.indexName = indexName;
     }
 
-    public Integer getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(Integer year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
-    public Integer getMonth() {
+    public String getMonth() {
         return month;
     }
 
-    public void setMonth(Integer month) {
+    public void setMonth(String month) {
         this.month = month;
     }
 

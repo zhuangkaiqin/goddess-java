@@ -220,4 +220,16 @@ public interface BaseInfoManageAPI {
         return null;
     }
 
+    /**
+     * 获取某段时间内项目组的内部项目数
+     *
+     * @param startTime
+     * @param endTime
+     * @param project
+     * @return
+     * @throws SerException
+     */
+    default Long getInterProject(String startTime, String endTime,  String project) throws SerException {
+        return null;
+    }
 }

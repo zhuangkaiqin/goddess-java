@@ -3,8 +3,6 @@ package com.bjike.goddess.dispatchcar.dto;
 import com.bjike.goddess.dispatchcar.enums.CollectDateType;
 import com.bjike.goddess.dispatchcar.enums.CollectDispatchcarType;
 
-import java.io.Serializable;
-
 /**
  * @Author: [jiangzaixuan]
  * @Date: [2017-10-07 16:26]
@@ -12,7 +10,7 @@ import java.io.Serializable;
  * @Version: [1.0.0]
  * @Copy: [com.bjike]
  */
-public class CollectDispatchcarDTO implements Serializable{
+public class CollectDispatchcarDTO{
     /**
      * 汇总类型
      */

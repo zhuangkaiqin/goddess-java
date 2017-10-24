@@ -31,11 +31,10 @@ public interface AccountInfoManagementAPI {
     default Boolean guidePermission(GuidePermissionTO guidePermissionTO) throws SerException {
         return null;
     }
-
     /**
      * 外账资料管理列表总条数
      */
-    default Long count(AccountInfoManagementDTO dto) throws SerException {
+    default Long countAccountInfoManagement(AccountInfoManagementDTO accountInfoManagementDTO) throws SerException {
         return null;
     }
     /**
@@ -50,33 +49,33 @@ public interface AccountInfoManagementAPI {
     /**
      * 外账资料管理
      *
-     * @param dto 外账资料管理dto
+     * @param accountInfoManagementDTO 外账资料管理dto
      * @return class AccountInfoManagementBO
      * @throws SerException
      */
-    default List<AccountInfoManagementBO> list(AccountInfoManagementDTO dto) throws SerException {
+    default List<AccountInfoManagementBO> findListAccountInfoManagement(AccountInfoManagementDTO accountInfoManagementDTO) throws SerException {
         return null;
     }
 
     /**
      * 添加外账资料管理
      *
-     * @param to 外账资料管理数据to
+     * @param accountInfoManagementTO 外账资料管理数据to
      * @return class AccountInfoManagementBO
      * @throws SerException
      */
-    default AccountInfoManagementBO insert(AccountInfoManagementTO to) throws SerException {
+    default AccountInfoManagementBO insertAccountInfoManagement(AccountInfoManagementTO accountInfoManagementTO) throws SerException {
         return null;
     }
 
     /**
      * 编辑外账资料管理
      *
-     * @param to 外账资料管理数据to
+     * @param accountInfoManagementTO 外账资料管理数据to
      * @return class AccountInfoManagementBO
      * @throws SerException
      */
-    default AccountInfoManagementBO edit(AccountInfoManagementTO to) throws SerException {
+    default AccountInfoManagementBO editAccountInfoManagement(AccountInfoManagementTO accountInfoManagementTO) throws SerException {
         return null;
     }
 
@@ -86,7 +85,7 @@ public interface AccountInfoManagementAPI {
      * @param id
      * @throws SerException
      */
-    default void remove(String id) throws SerException {
+    default void removeAccountInfoManagement(String id) throws SerException {
 
     }
 

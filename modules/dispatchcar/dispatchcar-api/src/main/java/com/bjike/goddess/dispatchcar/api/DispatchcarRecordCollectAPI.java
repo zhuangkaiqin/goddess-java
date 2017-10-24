@@ -2,7 +2,6 @@ package com.bjike.goddess.dispatchcar.api;
 
 import com.bjike.goddess.common.api.exception.SerException;
 import com.bjike.goddess.dispatchcar.bo.AreaCollectBO;
-import com.bjike.goddess.dispatchcar.to.GuidePermissionTO;
 
 import java.util.List;
 
@@ -15,21 +14,6 @@ import java.util.List;
 * @Copy:   		[ com.bjike ]
 */
 public interface DispatchcarRecordCollectAPI  {
-
-    /**
-     * 下拉导航权限
-     */
-    default Boolean sonPermission() throws SerException {
-        return null;
-    }
-    /**
-     * 导航权限
-     */
-    default Boolean guidePermission(GuidePermissionTO guidePermissionTO) throws SerException {
-        return null;
-    }
-
-
     /**
      * 出车记录管理日汇总
      */
@@ -39,12 +23,12 @@ public interface DispatchcarRecordCollectAPI  {
     /**
      * 出车管理周汇总
      */
-    List<AreaCollectBO> weekCollect(Integer year,Integer month,Integer week) throws SerException;
+    List<AreaCollectBO> weekCollect(String day) throws SerException;
 
     /**
      * 出车管理月汇总
      */
-    List<AreaCollectBO> monthCollect(Integer year,Integer month) throws SerException;
+    List<AreaCollectBO> monthCollect(String year,String month) throws SerException;
 
     /**
      * 出车管理累计汇总

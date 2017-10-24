@@ -497,6 +497,24 @@ public class BaseInfoManageSerImpl extends ServiceImpl<BaseInfoManage, BaseInfoM
     }
 
     @Override
+    public Long getInterProject(String startTime, String endTime,  String project) throws SerException {
+        String fields[] = new String[]{"projectNum"};
+        StringBuilder sql = new StringBuilder("select count(innerProject) as projectNum from businessproject_baseinfomanage");
+        if (StringUtils.isNotBlank(startTime) && StringUtils.isNotBlank(endTime)) {
+            sql.append(" where siginTime between '" + startTime + "'");
+            sql.append(" and '" + endTime + "'");
+//            sql.append(" and area = '" + area + "'");
+            sql.append(" and projectGroup = '" + project + "'");
+        }
+        List<ManagerBO> managerBOs = super.findBySql(sql.toString(), ManagerBO.class, fields);
+        if (null != managerBOs && managerBOs.size() > 0) {
+            List<Long> pros = managerBOs.stream().map(ManagerBO::getProjectNum).distinct().collect(Collectors.toList());
+            return pros.get(0);
+        }
+        return 0l;
+    }
+
+    @Override
     public byte[] exportExcel(BaseInfoManageDTO dto) throws SerException {
         String[] innerProjects = dto.getInnerProjects();
         List<BaseInfoManageExcel> toList = new ArrayList<BaseInfoManageExcel>();

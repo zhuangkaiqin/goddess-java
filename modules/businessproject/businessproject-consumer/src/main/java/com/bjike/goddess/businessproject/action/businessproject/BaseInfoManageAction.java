@@ -422,6 +422,20 @@ public class BaseInfoManageAction extends BaseFileAction {
     }
 
     /**
+     * 获取某段时间内相同地区和项目组的内部项目数
+     *
+     * @version v1
+     */
+    @GetMapping("v1/getInterProject")
+    public Result getInterProject(String startTime, String endTime, String project) throws ActException {
+        try {
+            return ActResult.initialize(baseInfoManageAPI.getInterProject(startTime, endTime,project));
+        } catch (SerException e) {
+            throw new ActException(e.getMessage());
+        }
+    }
+
+    /**
      * 获取某段时间内的内部项目名称
      *
      * @version v1

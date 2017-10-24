@@ -15,7 +15,6 @@ import com.bjike.goddess.dispatchcar.excel.SonPermissionObject;
 import com.bjike.goddess.dispatchcar.service.DispatchCarInfoSer;
 import com.bjike.goddess.dispatchcar.to.*;
 import com.bjike.goddess.staffentry.bo.EntryBasicInfoBO;
-import com.bjike.goddess.staffentry.bo.EntryRegisterBO;
 import com.bjike.goddess.staffentry.bo.StaffEntryRegisterBO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,16 +37,6 @@ public class DispatchCarInfoApiImpl implements DispatchCarInfoAPI {
 
     @Autowired
     private DispatchCarInfoSer dispatchCarInfoSer;
-
-    @Override
-    public List<SonPermissionObject> sonPermission() throws SerException {
-        return dispatchCarInfoSer.sonPermission();
-    }
-
-    @Override
-    public Boolean guidePermission(GuidePermissionTO guidePermissionTO) throws SerException {
-        return dispatchCarInfoSer.guidePermission(guidePermissionTO);
-    }
 
     @Override
     public DispatchCarInfoBO addModel(DispatchCarInfoTO to) throws SerException {
@@ -214,7 +203,7 @@ public class DispatchCarInfoApiImpl implements DispatchCarInfoAPI {
     }
 
     @Override
-    public List<EntryRegisterBO> findAllEntry() throws SerException {
+    public List<StaffEntryRegisterBO> findAllEntry() throws SerException {
         return dispatchCarInfoSer.findAllEntry();
     }
 
@@ -261,7 +250,7 @@ public class DispatchCarInfoApiImpl implements DispatchCarInfoAPI {
 
     @Override
     public void financialSugg(DispatchCarInfoTO dispatchCarInfoTO, CheckChangeCarTO to) throws SerException {
-        dispatchCarInfoSer.financialSugg(dispatchCarInfoTO,to);
+
     }
 
     @Override
@@ -318,26 +307,4 @@ public class DispatchCarInfoApiImpl implements DispatchCarInfoAPI {
     public List<CollectDispatchcarBO> countCar(CollectDispatchcarDTO dispatchcarDTO) throws SerException {
         return dispatchCarInfoSer.countCar(dispatchcarDTO);
     }
-
-    @Override
-    public void delete(String id) throws SerException {
-        dispatchCarInfoSer.delete(id);
-    }
-
-    @Override
-    public List<DispatchCarInfoBO> findInformation( String area, String department, String day) throws SerException {
-        return dispatchCarInfoSer.findInformation(area,department,day);
-    }
-
-    @Override
-    public List<DispatchCarInfoBO> findInformation(String area, String department, LocalDate[] day) throws SerException {
-        return dispatchCarInfoSer.findInformation(area,department,day);
-    }
-
-    @Override
-    public List<DispatchCarInfoBO> findInformation(String department, LocalDate[] day) throws SerException {
-        return dispatchCarInfoSer.findInformation(department,day);
-    }
-
-
 }

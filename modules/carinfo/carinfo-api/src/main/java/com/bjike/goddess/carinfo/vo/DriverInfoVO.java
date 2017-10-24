@@ -1,7 +1,7 @@
 package com.bjike.goddess.carinfo.vo;
 
 /**
- * 司机信息管理表现层对象
+ * 车辆信息管理表现层对象
  *
  * @Author: [ jason ]
  * @Date: [ 2017-07-13 07:46 ]
@@ -15,25 +15,20 @@ public class DriverInfoVO {
      * id
      */
     private String id;
-//    /**
-//     * 账务模块审核意见
-//     */
-//    private String suggest;
-//
-//    /**
-//     * 审核结果
-//     */
-//    private Boolean audit;
+    /**
+     * 账务模块审核意见
+     */
+    private String suggest;
+
+    /**
+     * 审核结果
+     */
+    private Boolean audit;
 
     /**
      * 地区
      */
     private String area;
-
-    /**
-     * 项目组
-     */
-    private String department;
 
     /**
      * 结算方式
@@ -177,6 +172,22 @@ public class DriverInfoVO {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getSuggest() {
+        return suggest;
+    }
+
+    public void setSuggest(String suggest) {
+        this.suggest = suggest;
+    }
+
+    public Boolean getAudit() {
+        return audit;
+    }
+
+    public void setAudit(Boolean audit) {
+        this.audit = audit;
     }
 
     public String getArea() {
@@ -397,14 +408,6 @@ public class DriverInfoVO {
 
     public String getRemark() {
         return remark;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
     }
 
     public void setRemark(String remark) {

@@ -19,7 +19,6 @@ import com.bjike.goddess.common.utils.excel.ExcelUtil;
 import com.bjike.goddess.intromanage.api.FirmIntroAPI;
 import com.bjike.goddess.intromanage.bo.FirmIntroBO;
 import com.bjike.goddess.intromanage.dto.FirmIntroDTO;
-import com.bjike.goddess.intromanage.entity.*;
 import com.bjike.goddess.intromanage.excel.FirmIntroExcel;
 import com.bjike.goddess.intromanage.to.*;
 import com.bjike.goddess.intromanage.vo.*;

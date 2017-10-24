@@ -93,7 +93,7 @@ public class DispatchCarInfoBO extends BaseBO {
     /**
      * 加班时长
      */
-    private Double overWorkTime;
+    private Integer overWorkTime;
 
     /**
      * 用车事由
@@ -177,14 +177,9 @@ public class DispatchCarInfoBO extends BaseBO {
     private Double getShouldAmountMoney;
 
     /**
-     * 实际加油量
+     * 加油量
      */
     private Double addOilAmount;
-
-    /**
-     * 实际加油费
-     */
-    private Double addOilAmountMoney;
 
     /**
      * 油卡余额
@@ -349,7 +344,7 @@ public class DispatchCarInfoBO extends BaseBO {
     /**
      * 寄件日期
      */
-    private String sendDate;
+    private LocalDate sendDate;
 
 
     /**
@@ -388,7 +383,7 @@ public class DispatchCarInfoBO extends BaseBO {
     /**
      * 收到发票日期
      */
-    private String receiveDate;
+    private LocalDate receiveDate;
 
     /**
      * 收到发票情况
@@ -412,7 +407,7 @@ public class DispatchCarInfoBO extends BaseBO {
     /**
      * 预计付款日期
      */
-    private String expectPayDate;
+    private LocalDate expectPayDate;
 
     /**
      * 付款计划
@@ -475,10 +470,10 @@ public class DispatchCarInfoBO extends BaseBO {
 //     */
 //    private Boolean pay;
 //
-    /**
-     * 租车费用
-     */
-    private Double carRentalCost;
+//    /**
+//     * 租车费用
+//     */
+//    private Double carRentalCost;
 //
 //    /**
 //     * 预计付款时间
@@ -500,10 +495,10 @@ public class DispatchCarInfoBO extends BaseBO {
 //     */
 //    private Boolean auditReceiptResult;
 //
-    /**
-     * 数据状态
-     */
-    private Status status;
+//    /**
+//     * 数据状态
+//     */
+//    private Status status;
 //
 //    /**
 //     * 资金审核时间
@@ -672,11 +667,11 @@ public class DispatchCarInfoBO extends BaseBO {
         this.siesta = siesta;
     }
 
-    public Double getOverWorkTime() {
+    public Integer getOverWorkTime() {
         return overWorkTime;
     }
 
-    public void setOverWorkTime(Double overWorkTime) {
+    public void setOverWorkTime(Integer overWorkTime) {
         this.overWorkTime = overWorkTime;
     }
 
@@ -960,11 +955,11 @@ public class DispatchCarInfoBO extends BaseBO {
         this.sender = sender;
     }
 
-    public String getSendDate() {
+    public LocalDate getSendDate() {
         return sendDate;
     }
 
-    public void setSendDate(String sendDate) {
+    public void setSendDate(LocalDate sendDate) {
         this.sendDate = sendDate;
     }
 
@@ -1016,16 +1011,12 @@ public class DispatchCarInfoBO extends BaseBO {
         this.receiver = receiver;
     }
 
-    public String getReceiveDate() {
+    public LocalDate getReceiveDate() {
         return receiveDate;
     }
 
-    public void setReceiveDate(String receiveDate) {
+    public void setReceiveDate(LocalDate receiveDate) {
         this.receiveDate = receiveDate;
-    }
-
-    public void setExpectPayDate(String expectPayDate) {
-        this.expectPayDate = expectPayDate;
     }
 
     public String getReceiveReceipts() {
@@ -1044,6 +1035,13 @@ public class DispatchCarInfoBO extends BaseBO {
         this.moneyModuleIdea = moneyModuleIdea;
     }
 
+    public LocalDate getExpectPayDate() {
+        return expectPayDate;
+    }
+
+    public void setExpectPayDate(LocalDate expectPayDate) {
+        this.expectPayDate = expectPayDate;
+    }
 
     public String getPaymentSchedule() {
         return paymentSchedule;
@@ -1219,29 +1217,5 @@ public class DispatchCarInfoBO extends BaseBO {
 
     public void setCost(Double cost) {
         this.cost = cost;
-    }
-
-    public Double getAddOilAmountMoney() {
-        return addOilAmountMoney;
-    }
-
-    public void setAddOilAmountMoney(Double addOilAmountMoney) {
-        this.addOilAmountMoney = addOilAmountMoney;
-    }
-
-    public Double getCarRentalCost() {
-        return carRentalCost;
-    }
-
-    public void setCarRentalCost(Double carRentalCost) {
-        this.carRentalCost = carRentalCost;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
     }
 }

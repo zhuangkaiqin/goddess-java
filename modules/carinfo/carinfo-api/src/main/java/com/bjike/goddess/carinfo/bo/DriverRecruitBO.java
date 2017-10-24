@@ -2,7 +2,6 @@ package com.bjike.goddess.carinfo.bo;
 
 import com.bjike.goddess.common.api.bo.BaseBO;
 
-
 /**
  * 司机招聘信息业务传输对象
  *
@@ -14,10 +13,10 @@ import com.bjike.goddess.common.api.bo.BaseBO;
  */
 public class DriverRecruitBO extends BaseBO {
 
-//    /**
-//     * 账务模块审核意见
-//     */
-//    private String suggest;
+    /**
+     * 账务模块审核意见
+     */
+    private String suggest;
 
     /**
      * 地区
@@ -25,19 +24,9 @@ public class DriverRecruitBO extends BaseBO {
     private String area;
 
     /**
-     * 项目组
+     * 审核结果
      */
-    private String department;
-
-    /**
-     * 信息收集时间
-     */
-    private String informationCollectionTime;
-
-//    /**
-//     * 审核结果
-//     */
-//    private Boolean audit;
+    private Boolean audit;
 
     /**
      * 司机名称
@@ -59,15 +48,6 @@ public class DriverRecruitBO extends BaseBO {
      */
     private Boolean backup;
 
-    /**
-     * 是否确定签订协议
-     */
-    private Boolean enSureAgreement;
-
-    /**
-     * 结算方式
-     */
-    private String meansOfPayments;
     /**
      * 身份证号
      */
@@ -143,6 +123,22 @@ public class DriverRecruitBO extends BaseBO {
      */
     private String remark;
 
+
+    public Boolean getAudit() {
+        return audit;
+    }
+
+    public void setAudit(Boolean audit) {
+        this.audit = audit;
+    }
+
+    public String getSuggest() {
+        return suggest;
+    }
+
+    public void setSuggest(String suggest) {
+        this.suggest = suggest;
+    }
 
     public String getArea() {
         return area;
@@ -302,38 +298,5 @@ public class DriverRecruitBO extends BaseBO {
 
     public void setRemark(String remark) {
         this.remark = remark;
-    }
-
-    public Boolean getEnSureAgreement() {
-        return enSureAgreement;
-    }
-
-    public void setEnSureAgreement(Boolean enSureAgreement) {
-        this.enSureAgreement = enSureAgreement;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-
-    public String getMeansOfPayments() {
-        return meansOfPayments;
-    }
-
-    public void setMeansOfPayments(String meansOfPayments) {
-        this.meansOfPayments = meansOfPayments;
-    }
-
-    public String getInformationCollectionTime() {
-        return informationCollectionTime;
-    }
-
-    public void setInformationCollectionTime(String informationCollectionTime) {
-        this.informationCollectionTime = informationCollectionTime;
     }
 }

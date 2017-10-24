@@ -131,4 +131,9 @@ public class BaseInfoManageApiImpl implements BaseInfoManageAPI {
     public List<String> getArea(String projectNane) throws SerException {
         return baseInfoManageSer.getArea(projectNane);
     }
+
+    @Override
+    public Long getInterProject(String startTime, String endTime, String project) throws SerException {
+        return baseInfoManageSer.getInterProject(startTime, endTime,project);
+    }
 }
