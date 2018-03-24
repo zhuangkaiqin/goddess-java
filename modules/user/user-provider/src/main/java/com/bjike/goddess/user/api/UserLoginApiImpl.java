@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
  */
 @Service("userLoginApiImpl")
 public class UserLoginApiImpl implements UserLoginAPI {
-    @Autowired
+    @Autowired(required = false)
     private UserLoginSer userLoginSer;
 
     @Override

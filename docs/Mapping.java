@@ -10,7 +10,7 @@ public class MappingDemo {
     /**
      * 相关属性说明：
      * 1：optional 是定义该关联类是否必须存在,值为false 时，关联类双方都必须存在(inner join) true是为left join
-     * 2：CascadeType.PERSIST（级联新建）、CascadeType.REMOVE（级联删除）、CascadeType.REFRESH（级联刷新）、CascadeType.MERGE（级联更新）中选择一个或多个。还有一个选择是使用CascadeType.ALL，表示选择全部四项。    @ManyToOne(cascade = {CascadeType.ALL})
+     * 2：CascadeType.PERSIST（级联新建）  、CascadeType.REMOVE（级联删除）、CascadeType.REFRESH（级联刷新）、CascadeType.MERGE（级联更新）中选择一个或多个。还有一个选择是使用CascadeType.ALL，表示选择全部四项。    @ManyToOne(cascade = {CascadeType.ALL})
      * 3：fetch = FetchType.EAGER/LAZY 懒加载或者正常加载（建议用LAZY）
      * 4：@JoinColumn(name="xxx_id")改注解会在该类对应表上生成一个关联主表的外键
      * 5：@Column(unique = true)(约束唯一) 默认为false

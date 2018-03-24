@@ -33,7 +33,7 @@ public class LoginAct {
 
     /**
      * 登录
-     *
+     * xxx
      * @param loginTO 登录用户传输数据对象
      * @param request httpRequest
      * @version v1

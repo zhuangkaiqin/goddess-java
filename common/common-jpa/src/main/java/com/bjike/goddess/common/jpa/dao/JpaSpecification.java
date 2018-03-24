@@ -207,6 +207,12 @@ public class JpaSpecification<BE extends BaseEntity, BD extends BaseDTO> impleme
      * @return
      */
     private Join<BE, Object> handlerJoinTable(Root<BE> root, String[] fields) {
+        /**
+         * student.stuNum
+         * [student,stuNum]
+         * student
+         */
+
         int fields_length = fields.length - 1; //忽略最后的属性查询字段 如user.userinfo.email 只取user.userinfo
         Join<BE, Object> join = null;
         if (fields_length >= 1) {  //存在连接查询

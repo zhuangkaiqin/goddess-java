@@ -1,11 +1,10 @@
-模块名:user
-类名:Integrtal
-作者:chenyang
-描述:用户积分
+模块名:people4
+类名:aClass
+作者:Jianyangfeng
+描述:测试班级
 #参数[变量类型  变量名 ]
 #parameter--------------
 (
-String userId 用户ID;
-String integral 用户积分；
-String inviterIntegral 邀请人积分你；
-String inviterId 邀请人ID；
+String ClaNum 班级编号;
+String ClaType 专业名称;
+)

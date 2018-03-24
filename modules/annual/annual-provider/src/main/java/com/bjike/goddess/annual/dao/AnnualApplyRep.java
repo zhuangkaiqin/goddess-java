@@ -14,4 +14,8 @@ import com.bjike.goddess.annual.entity.AnnualApply;
 */
 public interface AnnualApplyRep extends JpaRep<AnnualApply ,AnnualApplyDTO> { 
 
+
+
+
+
  }
